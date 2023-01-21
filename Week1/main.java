@@ -1,4 +1,4 @@
-package Test;
+package Week1;
 
 /*Lähde: Katsoin luennot*/
 
