@@ -1,4 +1,4 @@
-package main;
+package week4;
 import java.util.Scanner; /* W3SCHOOl, löytyy vissiin kurssimateriaalistakin*/
 
 import javax.sql.rowset.CachedRowSet;
@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class App implements Serializable {
     private static final long serialVersionUID = 242398L;
-    public class Student implements Serializable{
+    public static class Student implements Serializable{
          
         private static final long serialVersionUID = 24234298L;
         private String name;
@@ -57,7 +57,7 @@ public class App implements Serializable {
         }
 
     }
-    public class Grade implements Serializable{
+    public static class Grade implements Serializable{
         private static final long serialVersionUID = 95732453L;
         private String name;
         private int grade;
@@ -74,7 +74,7 @@ public class App implements Serializable {
         }
     }
 
-    public class Calculator{
+    public static class Calculator{
         public double getAverageGrade(int counter, University universal){
             int sum = 0;
             int counter2 = 0;
@@ -117,7 +117,7 @@ public class App implements Serializable {
         }
     }
 
-    public class University {
+    public static class University {
         final private String FILENAME;
         
         private ArrayList<Student> students = new ArrayList<Student>();
@@ -203,8 +203,8 @@ public class App implements Serializable {
         App h = new App();  // en tiedä miks mut korjaa asioita, Stackoverflow.
         String middleput = "s";
         Scanner input = new Scanner(System.in);
-        Calculator calc = h.new Calculator();
-        University universal = h.new University();
+        Calculator calc = new Calculator();
+        University universal = new App.University();
 
         while(middleput != "e"){
             System.out.println("1) Lisää opiskelija, 2) Listaa opiskelijat, 3) Lisää opiskelijalle suorite, 4) Listaa opiskelijan suoritteet, 5) Laske opiskelijan suoritusten keskiarvo, 6) Laske opiskelijan suoritusten mediaani, 7) Tallenna opiskelijat tiedostoon, 8) Lataa opiskelijat tiedostosta, 0) Lopeta ohjelma");
@@ -217,7 +217,7 @@ public class App implements Serializable {
                     System.out.println("Anna opiskelijan opiskelijanumero:");
                     String studentnumbers = input.nextLine();
                     int studentnumber = Integer.parseInt(studentnumbers);
-                    Student student = h.new Student(name, studentnumber);
+                    Student student = new Student(name, studentnumber);
                     universal.addonestudent(student);
                     break;
                 case "2":
@@ -235,7 +235,7 @@ public class App implements Serializable {
                     String grade =  input.nextLine();
                     int iGrade = Integer.parseInt(grade);
 
-                    Grade newgrade = h.new Grade(course, iGrade);
+                    Grade newgrade = new Grade(course, iGrade);
                     universal.gradeStudent(iOrder, newgrade);
 
                     break;

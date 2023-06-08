@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EABAFB"
+    tools:context=".SideActivityAddInfo">
+
+    <EditText
+        android:id="@+id/txtLastnameInput"
+        android:layout_width="331dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="8dp"
+        android:background="#F0CBFD"
+        android:ems="10"
+        android:hint="Input Lastname"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtFirstnameInput" />
+
+    <EditText
+        android:id="@+id/txtFirstnameInput"
+        android:layout_width="327dp"
+        android:layout_height="26dp"
+        android:layout_marginTop="8dp"
+        android:background="#F0CBFD"
+        android:backgroundTint="#F0CBFD"
+        android:ems="10"
+        android:hint="Input Firstname"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/txtEmailInput"
+        android:layout_width="329dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="8dp"
+        android:background="#F0CBFD"
+        android:ems="10"
+        android:hint="Input Email"
+        android:inputType="textEmailAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtLastnameInput" />
+
+    <RadioGroup
+        android:id="@+id/RadioGroupPro"
+        android:layout_width="329dp"
+        android:layout_height="195dp"
+        android:layout_marginTop="8dp"
+        android:background="#F0CBFD"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtEmailInput">
+
+        <RadioButton
+            android:id="@+id/radioButtonTite"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tietotekniikka" />
+
+        <RadioButton
+            android:id="@+id/radioButtonTuta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tuotantotalous" />
+
+        <RadioButton
+            android:id="@+id/radioButtonLatex"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Laskennallinen tekniikka" />
+
+        <RadioButton
+            android:id="@+id/radioButtonSahkotekniikka"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sahkotekniikka" />
+
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/buttonAddUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="#F0CBFD"
+        android:backgroundTint="#F0CBFD"
+        android:onClick="addUser"
+        android:text=" Add User"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cbTohtori"
+        app:rippleColor="#F0CBFD" />
+
+    <RadioGroup
+        android:id="@+id/RadioGroupFace"
+        android:layout_width="332dp"
+        android:layout_height="149dp"
+        android:layout_marginTop="8dp"
+        android:background="#F0CBFD"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/RadioGroupPro">
+
+        <RadioButton
+            android:id="@+id/imgTroll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TrollFace" />
+
+        <RadioButton
+            android:id="@+id/imgObanium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Obanium" />
+
+        <RadioButton
+            android:id="@+id/imgFace"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Third profile picture" />
+    </RadioGroup>
+
+    <CheckBox
+        android:id="@+id/cbkandi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="#F0CBFD"
+        android:text="Kanditaatin tutkinto"
+        app:layout_constraintEnd_toEndOf="@+id/RadioGroupFace"
+        app:layout_constraintStart_toStartOf="@+id/RadioGroupFace"
+        app:layout_constraintTop_toBottomOf="@+id/RadioGroupFace" />
+
+    <CheckBox
+        android:id="@+id/cbMaister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:background="#F0CBFD"
+        android:text="Maisterin tutkinto"
+        app:layout_constraintEnd_toEndOf="@+id/cbkandi"
+        app:layout_constraintStart_toStartOf="@+id/cbkandi"
+        app:layout_constraintTop_toBottomOf="@+id/cbkandi" />
+
+    <CheckBox
+        android:id="@+id/cbTohtori"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#F0CBFD"
+        android:text="Tohtorin tutkinto"
+        app:layout_constraintEnd_toEndOf="@+id/cbMaister"
+        app:layout_constraintStart_toStartOf="@+id/cbMaister"
+        app:layout_constraintTop_toBottomOf="@+id/cbMaister" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
